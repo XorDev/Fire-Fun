@@ -1,4 +1,4 @@
-//#define glitch
+#define glitch
 #define glitch_amt .05
 #define glitch_num 20.
 
@@ -18,8 +18,8 @@ vec2 coord(vec2 c,float s)
 	float v = dot(new,new);
 	
 	#ifdef glitch
-	vec2 off = hash2(ceil(c*glitch_num)+time*.1);
-	new += hash2(ceil(c*glitch_num-time*.1+off))*glitch_amt*v;
+	vec2 off = hash2(ceil(new*glitch_num)+time*.1);
+	new += hash2(ceil(new*glitch_num-time*.1+off))*glitch_amt*v;
 	#endif
 	return new+.5;
 }

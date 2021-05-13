@@ -1,7 +1,6 @@
-#define color_multiply vec3(.99,.983,.97)
+#define color_multiply vec3(.985,.97,.99)
+//#define color_multiply vec3(.99,.983,.97)
 //#define color_multiply vec3(.98,.99,.96)
-//#define color_multiply vec3(.985,.97,.99)
-
 
 varying vec4 v_color;
 varying vec2 v_coord;
@@ -26,9 +25,9 @@ vec2 value2(vec2 p)
 
 void main()
 {
-	vec2 off = 4.*value2(gl_FragCoord.xy/26.+vec2(0,4)*time);
-	//vec2 off = 2.*(cos(gl_FragCoord.yx/46.+cos(gl_FragCoord.xy/99.)+time))+2.*value2(gl_FragCoord.xy/20.+vec2(0,4)*time);
+	vec2 off = 2.*(cos(gl_FragCoord.yx/46.+cos(gl_FragCoord.xy/99.)+time))+2.*value2(gl_FragCoord.xy/20.+vec2(0,4)*time);
 	//vec2 off = 3.*sign(cos(gl_FragCoord.yx/36.+time));
+	//vec2 off = 4.*value2(gl_FragCoord.xy/26.+vec2(0,4)*time);
 	
 	//Sample the last frame, but with local offsets:
 	vec4 tex = texture2D(gm_BaseTexture,v_coord+v_texel*off);
