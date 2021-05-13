@@ -12,8 +12,8 @@ if !surface_exists(surf2) surf2 = surface_create(ww,wh);
 //Resize surfaces
 if (ww != window_get_width()) || (wh != window_get_height())
 {
-	ww = window_get_width();
-	wh = window_get_height();
+	ww = max(window_get_width(),1);
+	wh = max(window_get_height(),1);
 
 	camera_set_view_size(view_camera[0],ww,wh);
 	surface_resize(application_surface,ww,wh);
@@ -32,7 +32,7 @@ shader_reset();
 //Draw fire
 if mouse_check_button(mb_left)
 {
-	var radius = random(ww/32);
+	var radius = ww/64;
 	draw_circle(mouse_x,mouse_y,radius,0);
 	draw_line_width(mouse_x,mouse_y,xprev,yprev,radius*2);
 }
