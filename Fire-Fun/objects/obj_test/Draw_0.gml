@@ -9,6 +9,17 @@ if !clear
 if !surface_exists(surf1) surf1 = surface_create(ww,wh);
 if !surface_exists(surf2) surf2 = surface_create(ww,wh);
 
+//Resize surfaces
+if (ww != window_get_width()) || (wh != window_get_height())
+{
+	ww = window_get_width();
+	wh = window_get_height();
+
+	camera_set_view_size(view_camera[0],ww,wh);
+	surface_resize(application_surface,ww,wh);
+	surface_resize(surf1,ww,wh);
+	surface_resize(surf2,ww,wh);
+}
 
 surface_copy(surf1,0,0,application_surface);
 
