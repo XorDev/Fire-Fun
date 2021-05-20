@@ -13,5 +13,5 @@ void main()
     
     v_color = in_Colour;
     v_coord = in_TextureCoord;
-	v_texel = vec2(length(proj[0].xyz),length(proj[1].xyz))/2.;
+	v_texel = vec2(length(proj[0]),length(proj[1]))/2.;
 }

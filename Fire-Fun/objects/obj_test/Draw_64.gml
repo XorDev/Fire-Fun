@@ -6,6 +6,7 @@ var bloom_passes = 4;//higher = brighter, but slower
 var scale = 2;
 surface_set_target(surf1);
 shader_set(shd_bloom);
+texture_set_stage(uni_noise,sprite_get_texture(spr_bluenoise,0));
 shader_set_uniform_f(uni_radius,scale);
 draw_surface(application_surface,0,0);
 shader_reset();

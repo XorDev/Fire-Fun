@@ -1,4 +1,4 @@
-#define glitch
+//#define glitch
 #define glitch_amt .05
 #define glitch_num 20.
 
@@ -28,5 +28,6 @@ void main()
 	vec4 tex   = texture2D(gm_BaseTexture,coord(v_coord,1.00));
 	     tex.g = texture2D(gm_BaseTexture,coord(v_coord,1.01)).g;
 	     tex.b = texture2D(gm_BaseTexture,coord(v_coord,1.02)).b;
+		 
 	gl_FragColor = v_color * tex;
 }

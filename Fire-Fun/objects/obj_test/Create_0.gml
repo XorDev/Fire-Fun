@@ -1,5 +1,8 @@
 ///@desc Init
 
+window_set_cursor(cr_none);
+window_set_size(display_get_width(),display_get_height())
+
 ww = window_get_width();
 wh = window_get_height();
 
@@ -19,6 +22,7 @@ uni_radius = shader_get_uniform(shd_bloom,"radius");
 uni_noise = shader_get_sampler_index(shd_bloom,"noise");
 gpu_set_tex_filter_ext(uni_noise,0);
 gpu_set_tex_repeat_ext(uni_noise,1);
+
 uni_time = shader_get_uniform(shd_distort,"time");
 uni_ptime = shader_get_uniform(shd_post,"time");
 

@@ -1,5 +1,5 @@
 //Number of bloom samples. Higher = smoother, slower
-#define SAMPLES 32.
+#define SAMPLES 64.
 
 uniform float radius;
 uniform sampler2D noise;//bluenoise texture
